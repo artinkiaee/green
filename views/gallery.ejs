@@ -1,0 +1,38 @@
+<%- include('partials/navs', { title: 'categories' }) %>
+
+<section class="text-white py-4 py-xl-5">
+    <div class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+        <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5" style="background: url(&quot;img/gallerymain-header.jpg&quot;) center / cover no-repeat;height: 500px;">
+            <div class="row">
+                <div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-flex d-xl-flex justify-content-center align-items-center align-content-center align-self-center mx-auto" style="margin-bottom: 100px;z-index: -10;">
+    <div class="container">
+        <div class="row" style="margin-bottom: 50px;">
+            <div class="col-md-12">
+                <h1 style="color: black;" class="text-center">گالری</h1>
+            </div>
+        </div>
+        <div class="row">
+            <% categories.forEach(category => { %>
+            <div class="col">
+                <div class="row" style="margin-bottom: 20px;margin-top: 20px;">
+                    <div class="col">
+                        <h4 class="text-center" style="color: var(--bs-success);"><%= category.category %></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-xl-flex justify-content-xl-center categ"><a href="/gallery/<%= category._id %>"><img src="<%= category.thumbnail.url %>"></a></div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

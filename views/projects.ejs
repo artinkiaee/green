@@ -1,0 +1,114 @@
+<%- include('partials/navs', { title: 'projects' }) %>
+
+<div class="modal fade modal-xl" role="dialog" tabindex="-1" id="mymodal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">آکادا سنتر&nbsp;</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" style="padding: 0px;"><img src="assets/img/project/آکادا%20سنتر%20-%20تهران%20-%20چیلر%20(1).jpg" style="width: 100%;border-radius: 0px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;"></div>
+        </div>
+    </div>
+</div>
+<section class="text-white py-4 py-xl-5">
+    <div class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+        <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5" style="background: url(&quot;img/projects.jpg&quot;) center / cover no-repeat;height: 500px;">
+            <div class="row">
+                <div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-flex justify-content-center align-items-center align-content-center feature-projects" style="margin-bottom: 50px;z-index:-1">
+    <div class="container">
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col">
+                <h1 class="text-center" style="margin-bottom: 20px; color: black;">پروژه های ما، آیینه کاری بی نظیر</h1>
+            </div>
+        </div><div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+<div id="her" class="swiper-wrapper">
+<% projects.forEach(project => { %>
+  <div class="swiper-slide top align-items-end" style="position: relative;display: flex;justify-content: start;text-align: right;color: white;">
+    <img style="filter: brightness(60%);" src="<%= project.thumbnail.url %>" />
+      <div class="infot" style="position: absolute;padding-bottom:50px;padding-right: 70px;">
+          <h1><%= project.title %></h1>
+          <h1><%= project.description %></h1>
+          <h1 style="color:var(--bs-warning)"><%= project.city %></h1>
+      </div>
+  </div>
+  <% }); %>
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+<div thumbsSlider="" class="swiper mySwiper">
+<div class="swiper-wrapper">
+<% projects.forEach(project => { %>
+  <div class="swiper-slide bot align-items-center" style="position: relative;display: flex;justify-content: center;text-align: center;color: white;">
+    <img src="<%= project.thumbnail.url %>" />
+      <div class="info" style="position: absolute;">
+          <h5><%= project.title %></h5>
+          <h5><%= project.description %></h5>
+          <h5><%= project.city %></h5>
+      </div>
+  </div>
+  <% }); %>
+</div>
+<script>
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 20,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".mySwiper2", {
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+</script>
+    </div>
+</section>
+<section class="d-flex flex-column mx-auto" style="width: 75%;margin-bottom: 50px;">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col">
+            <h1 class="text-center" style="color: black;">همه پروژه ها</h1>
+        </div>
+    </div>
+    <div>
+        <!--Responsive Image Grid Block-->
+        <!--Photo Grid-->
+        <div>
+            <!--Comment-->
+            <div class="mx-auto rig-row" style="margin-top: 20px;">
+                <!--Comment-->
+                <% columns.forEach(column => { %>
+                <div class="rig-column" style="padding-right: 10px;padding-left: 10px;">
+                    <% column.forEach(project => { %>
+                    <div class="text-center d-flex flex-column align-items-center bot proj">
+                        <div class="cont" style="position: relative;width: auto;"><img class="projimg" src="<%= project.thumbnail.url %>">
+                            <div class="loc">
+                                <h4 class="d-flex"><%= project.city %></h4>
+                                <h4><%= project.description %></h4>
+                            </div>
+                        </div>
+                        <div class="infot">
+                            <h5 style="margin-top: 10px;color:black;"><%= project.title %></h5>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

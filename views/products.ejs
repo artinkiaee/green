@@ -1,0 +1,203 @@
+<%- include('partials/navs', { title: 'g' }) %>
+<section class="hero-section d-flex flex-wrap">
+    <div class="video-container1">
+        <video autoplay muted loop>
+            <source src="/<%= pro.thumbnail.url %>" type="video/mp4">
+        </video>
+    </div>
+    <div class="content-container">
+        <div class="content-wrap">
+            <h1 class="display-4 mb-4 text-success"><%= pro.title %></h1>
+            <p class="lead mb-5"><%= pro.description %></p>
+            <div class="row">
+                <!-- Feature Card 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="text-success">مشاوره تخصصی</h3>
+                            <p>مشاوره تخصصی: 02141749</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="text-success">نمایندگان فعال</h3>
+                            <p>نمایندگی در سراسر ایران</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-tools"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="text-success">گارانتی و پشتیبانی</h3>
+                            <p>گارانتی 5 ساله کمپرسور</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feature Card 4 -->
+                <div class="col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="text-success">گارانتی قطعات</h3>
+                            <p>گارانتی 18 ماه سایر قطعات</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="width: 100%;padding: 60px;">
+    <div class="d-flex justify-content-center align-items-center align-content-center">
+        <hr style="width: 40%;height: 3px;background: var(--bs-success);">
+        <h1 class="text-center" style="color: var(--bs-success);margin-right: 12px;margin-left: 12px;font-size: 35px;">سری محصول</h1>
+        <hr style="width: 40%;height: 3px;background: var(--bs-success);">
+    </div>
+    <div class="container" style="padding: 40px;">
+        <div class="row" style="margin-bottom: 50px;">
+            <% sub.forEach(function(item, index) { %>
+                <% if (index % 3 === 0 && index !== 0) { %>
+                </div><div class="row" style="margin-bottom: 50px;">
+                <% } %>
+            <div class="col-md-4">
+                <div class="card text-center d-flex justify-content-center align-items-center align-content-center" style="border-radius: 0px;">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center align-content-center" style="padding: 0;"><img style="padding:20px;width: 100%;height:300px; object-fit: contain;" src="/<%= item.thumbnail %>">
+                        <div style="width: 100%;padding: 20px;border-top: 1px solid rgb(210,210,210) ;"><a class="pro" href="#"><%= item.title %></a></div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+<section style="width: 100%;padding: 60px;">
+    <div class="d-flex justify-content-center align-items-center align-content-center">
+        <hr style="width: 40%;height: 3px;background: var(--bs-success);">
+        <h1 class="text-center" style="color: var(--bs-success);margin-right: 12px;margin-left: 12px;font-size: 35px;">دانلود کاتالوگ</h1>
+        <hr style="width: 40%;height: 3px;background: var(--bs-success);">
+    </div><button class="btn btn-success btn-lg d-flex justify-content-center align-items-center align-content-center mx-auto" type="button" style="margin-top: 30px;"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor" class="fs-4" style="margin-left: 5px;">
+            <g>
+                <rect fill="none" height="24" width="24"></rect>
+            </g>
+            <g>
+                <path d="M5,20h14v-2H5V20z M19,9h-4V3H9v6H5l7,7L19,9z"></path>
+            </g>
+        </svg><a href="/<%= pro.catalog.url %>" style="text-decoration: none;color: white;">دانلود کاتالوگ</a></button>
+</section>
+<section style="width: 100%;padding: 60px;">
+    <div class="d-flex justify-content-center align-items-center align-content-center">
+        <hr style="width: 40%;height: 3px;background: var(--bs-success);">
+        <h1 class="text-center" style="color: var(--bs-success);margin-right: 12px;margin-left: 12px;font-size: 35px;">سوالات متداول</h1>
+        <hr style="width: 40%;height: 3px;background: var(--bs-success);">
+    </div>
+    <div class="accordion accordion-flush mx-auto" role="tablist" id="accordion-1" style="width: 80%;margin-top: 50px;">
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">کولر گازی چیست؟&nbsp; &nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-1" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(122, 121, 121);">کولرهای دو تکه را با نام کولر گازی یا اسپلیت می شناسند. همانطور که از نامش پیداست این کولرها از دو واحد یونیت داخلی و یونیت خارجی تشکیل می شوند. یونیت خارجی شامل کمپرسور و کندانسور است که آن را خارج از ساختمان نصب می کنند. یونیت داخلی که شامل واحد تبخیر (اپراتور) در داخل ساختمان جای می گیرد. این دو یونیت توسط دو لوله مسی به یکدیگر مرتبط هستند.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">ساختمان اصلی و عملکرد کولر گازی&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-2" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(122, 121, 121);">ساختمان اصلی اسپلیت از 4 بخش زیر تشکیل می شود: 1.کمپرسور: قلب یک سیستم کولر گازی می باشد که وظیفه ی آن متراکم کردن مبرد و بوجود آوردن اختلاف فشار برای برای گردش ماده سرمازا را دارد. کمپرسور، بخار مبرد کم‌فشار با دمای کم را از طریق لوله مکش جذب می کند و پس از متراکم کردن آن از طریق لوله رفتی با فشار و دمای بالا به سمت کندانسور می برد. 2.کندانسور: بخاری که از سمت کمپرسور به کندانسور وارد شده در این بخش تقطیر می شود و تبدیل به مایع می گردد. 3.اپراتور: وظیفه اصلی این بخش تبدیل تبدیل مایع به بخار می باشد. به طوری که مایع مبرد در اپراتور با گرما گرفتن از هوای محیط تبخیر می شود. 4.شیر انبساط یا لوله مویی: این بخش باعث کاهش فشار و افزایش سرعت مبرد قبل از ورود به اواپراتور می شود.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">انواع کولر گازی اسپلیت&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-3" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(122, 121, 121);">کولر گازی به صورت کلی به سه دسته عمده تقسیم می‌شوند: 1.پنجره ایی 2.پرتابل 3. کولر گازی دو تکه یا اسپلیت. دسته بندی کولر گازی گرین به شرح زیر است: کولر گازی ،on-off کولر گازی اینورتر، کولر گازی تروپیکال، کولر گازی پیستونی، کولر گازی پرتابل، کولر گازی ایستاده</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-4" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">ویژگی های کولر گازی گرین&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-4" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(122, 121, 121);">پرتاب باد: پرتاب باد به سمت سقف در حالت سرمایش، پرتاب باد به سمت کف در حالت گرمایش Wifi: دمای منزل شما را هر کجا که باشید می توانید انتخاب کنید. اسپلیت گرین قابلیت تجهیز به تکنولوژی کنترل Wifi IOT را دارد.(سفارشی) سرمایش و گرمایش سریع: سرمایش مطلوب را در 30 ثانیه خواهید داشت. گرمایش قوی را در حدود یک دقیقه تجربه خواهید کرد. فین های طلایی: با به کارگیری فین های طلایی در کندانسورها و اپراتورهای کولر گازی گرین، مبدل حرارتی از آلودگی هوا و عناصر خورنده در امان خواهد بود. فیلترها: فیلتر ویتامین ث ، فیلتر یون نقره، فیلتر آنتی فرم آلدهید.(سفارشی) رنج دمایی قابل انعطاف از منفی 15 درجه سانتی گراد تا مثبت 55 درجه سانتی گراد.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-5" aria-expanded="false" aria-controls="accordion-1 .item-5" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">انواع گاز مبرد به کار رفته در کولر گازی اسپلیت&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-5" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(88, 88, 88);">کولر گازی اسپلیت ها برای انجام عملیات خنک سازی محیط از گازهای مبرد استفاده می کنند. این گاز ها به طور کلی به سه دسته R22 ، R410 و R407 تقسیم می‌شوند. گاز مبرد R22 که از پر مصرف ترین گازهاست یکی از گازهای خطرناک و مضر برای لایه ازون می باشد که به همین دلیل استفاده کمتری از آن می شود و تقریبا منسوخ شده. گاز R410 بر خلاف R22 ، با فرمول گیاهی دوستدار محیط زیست می‌باشد و استفاده از آن مرسوم تر است. گاز مبرد R407 نیز فرمولی گیاهی داشته و دوستدار محیط زیست است و راندمان بالایی نیز دارد، ولی از نظر کاربرد به گستردگی مبرد R410 نیست.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-6" aria-expanded="false" aria-controls="accordion-1 .item-6" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">کولر گازی گرین ساخت کجاست؟&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-6" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(88, 88, 88);">کولر گازی گرین با تکیه بر دانش فنی روز اروپا، متخصصین کار آزموده و همچنین ماشین آلات و تجهیزات پیشرفته تمام اتوماتیک، محصولات با کیفیت و همگام با بالاترین استانداردهای تضمین کیفیت در اروپا را در چین تولید می‌کند.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-7" aria-expanded="false" aria-controls="accordion-1 .item-7" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">راندمان EER و عملکرد COP در برچسب مصرف انرژی کولر گازی اسپلیت&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-7" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(88, 88, 88);">EER مخفف Energty Efficiency Ratio به معنی میزان بهره وری انرژی الکتریکی یا مقدار تبدیل انرژی الکتریکی به سرما را نشان می دهد . هر چه مقدار آن در دستگاه بالاتر باشد قدرت خنک کنندگی بالاتری دارد. دستگاه هایی که مصرف انرژی آنها رده ی C به بالا هستند حین مصرف بیشترین میزان مصرف برق را خواهند داشت و در عین حال کمترین بازدهی را دارند، برخلاف مصرف زیاد بازدهی مطلوبی ندارد. با خرید دستگاه های پرمصرف هزینه های گزاف قبض برق را متحمل خواهید شد. بنابراین پیشنهاد ما به شما که قصد خرید این سری از سیستم های تهویه مطبوع را دارید اینست که حتی الامکان از دستگاه هایی با برچسب انرژی A و یا B انتخاب نمایید. چرا که این محصولات با مصرف بهینه انرژی بیشترین بازدهی را دارا می باشند و در مدت زمان کوتاهی دمای اتاق را به درجه دلخواه کاربر می رسانند.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-8" aria-expanded="false" aria-controls="accordion-1 .item-8" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">خرید و قیمت کولر گازی گرین&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-8" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(88, 88, 88);">برای اطلاع از قیمت کولر گازی گرین و همچنین سفارش آن میتوانید از لیست نمایندگان فروش گرین ، نمایندگی مورد نظر خود را انتخاب کنید.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-9" aria-expanded="false" aria-controls="accordion-1 .item-9" style="padding: 0px;padding-right: 10px;padding-top: 16px;padding-bottom: 16px;">تعمیر کولر گازی&nbsp;</button></h2>
+            <div class="accordion-collapse collapse item-9" role="tabpanel">
+                <div class="accordion-body">
+                    <p class="mb-0"><span style="color: rgb(88, 88, 88);">با تکمیل فرم درخواست نصب یا تعمیر و همچنین تماس با ما می توانید از خدمات تعمیر کولر گازی، نصب و یا سرویس کولرگازی بهره مند شوید.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-flex justify-content-center align-items-center align-content-center" style="width: 100%;margin-bottom: 30px;">
+    <div class="text-md-right" style="width: 80%;">
+        <ul class="list-unstyled d-flex list-inline">
+            <li class="list-inline-item"><a href="#" class="btn-floating btn-sm text-light" style="font-size:23px;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor" class="fs-2" style="color: var(--bs-success);">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"></path>
+                    </svg></a></li>
+            <li class="list-inline-item"><a href="#" class="btn-floating btn-sm text-light" style="font-size:23px;"><i class="fab fa-twitter fs-2" style="color: var(--bs-success);"></i></a></li>
+            <li class="list-inline-item"><a class="text-center btn-floating btn-sm text-light" href="#" style="font-size: 23px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-2" style="color: var(--bs-success);">
+                        <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
+                        <path d="M224 122.8c-72.7 0-131.8 59.1-131.9 131.8 0 24.9 7 49.2 20.2 70.1l3.1 5-13.3 48.6 49.9-13.1 4.8 2.9c20.2 12 43.4 18.4 67.1 18.4h.1c72.6 0 133.3-59.1 133.3-131.8 0-35.2-15.2-68.3-40.1-93.2-25-25-58-38.7-93.2-38.7zm77.5 188.4c-3.3 9.3-19.1 17.7-26.7 18.8-12.6 1.9-22.4.9-47.5-9.9-39.7-17.2-65.7-57.2-67.7-59.8-2-2.6-16.2-21.5-16.2-41s10.2-29.1 13.9-33.1c3.6-4 7.9-5 10.6-5 2.6 0 5.3 0 7.6.1 2.4.1 5.7-.9 8.9 6.8 3.3 7.9 11.2 27.4 12.2 29.4s1.7 4.3.3 6.9c-7.6 15.2-15.7 14.6-11.6 21.6 15.3 26.3 30.6 35.4 53.9 47.1 4 2 6.3 1.7 8.6-1 2.3-2.6 9.9-11.6 12.5-15.5 2.6-4 5.3-3.3 8.9-2 3.6 1.3 23.1 10.9 27.1 12.9s6.6 3 7.6 4.6c.9 1.9.9 9.9-2.4 19.1zM400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM223.9 413.2c-26.6 0-52.7-6.7-75.8-19.3L64 416l22.5-82.2c-13.9-24-21.2-51.3-21.2-79.3C65.4 167.1 136.5 96 223.9 96c42.4 0 82.2 16.5 112.2 46.5 29.9 30 47.9 69.8 47.9 112.2 0 87.4-72.7 158.5-160.1 158.5z"></path>
+                    </svg></a></li>
+            <li class="list-inline-item"><a href="#" class="btn-floating btn-sm text-light" style="font-size:23px;"><i class="fab fa-telegram-plane fs-2" style="color: var(--bs-success);"></i></a></li>
+            <li class="list-inline-item"><a class="text-center btn-floating btn-sm text-light" href="#" style="font-size: 23px;margin-right: 10px;"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor" class="fs-2" style="color: var(--bs-success);">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+                    </svg></a></li>
+        </ul>
+    </div>
+</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,76 @@
+<%- include('partials/navs', { title: 'g' }) %>
+
+<section class="text-white py-4 py-xl-5">
+    <div class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+        <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5" style="background: url(&quot;/img/media.jpg&quot;) center / cover no-repeat;height: 500px;">
+            <div class="row">
+                <div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="d-flex d-xl-flex justify-content-center align-items-center align-content-center align-self-center mx-auto" style="margin-bottom: 100px;z-index: -10;margin-top: -40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <section id="portfolio" class="portfolio">
+                    <div class="container">
+                        <div class="section-title pt-4 pb-4">
+                            <h2 style="color: black;">گالری تصاویر</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 d-flex justify-content-center">
+                                <ul id="portfolio-flters">
+                                    <li class="filter-active" data-filter="*">تمام تصاویر</li>
+                                    <li data-filter=".filter-events">ایونت ها</li>
+                                    <li data-filter=".filter-products">محصولات</li>
+                                    <li data-filter=".filter-branches">نماینده ها</li>
+                                    <li data-filter=".filter-ads">تبلیغات</li>
+                                    <li data-filter=".filter-tuts">آموزشی</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row portfolio-container justify-content-center row-cols-lg-2">
+                            <div class="col">
+                                <% galleryItems.forEach(item => { %>
+                                <div class="portfolio-item <%= item.subCategory %>"><img style="display: <%= state1 %> class="img-fluid rounded-1" src="/<%= item.thumbnail.url %>"><video class="img-fluid rounded-1" style="display: <%= state %>;" src="http://85.208.253.36:8082/image/Gallery/CAC-final-1.mp4"></video>
+                                    <div class="d-flex flex-column portfolio-info">
+                                        <h4><%= item.title %></h4><a class="portfolio-lightbox preview-link" href="/<%= item.thumbnail.url %>" data-gallery="portfolioGallery" title="Logo design"><i class="fas fa-plus"></i></a>
+                                    </div>
+                                </div>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function() {
+        // Initialize Isotope after all images have loaded
+        var $grid = $('.portfolio-container').imagesLoaded(function() {
+            $grid.isotope({
+                itemSelector: '.portfolio-item',
+                layoutMode: 'masonry',
+                percentPosition: true,
+                masonry: {
+                    columnWidth: '.portfolio-item'
+                }
+            });
+        });
+
+        // Filter items on button click
+        $('#portfolio-flters').on('click', 'li', function() {
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+            // Change active class
+            $('#portfolio-flters li').removeClass('filter-active');
+            $(this).addClass('filter-active');
+        });
+    });
+</script>
+<%- include('partials/footer') %>

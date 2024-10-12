@@ -1,0 +1,53 @@
+@font-face {
+	font-family: 'IRANSansXFaNum';
+	src: url(../fonts/IRANSansXFaNum-d1cf9c07aacba2dabcbcb8486bb1d317.woff2) format('woff2'),
+	url(../fonts/IRANSansXFaNum-3e677f9086469cd4e0fd3aa6d1375c00.woff) format('woff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IRANSansXFaNum';
+	src: url(../fonts/IRANSansXFaNum-4497125566488143f14ee99c055be311.woff2) format('woff2'),
+	url(../fonts/IRANSansXFaNum-1a229f20fc2a4cf27616db2c45a95c77.woff) format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IRANSansXFaNum';
+	src: url(../fonts/IRANSansXFaNum-7ef60b04786f06465e12e9a262bd10b8.woff2) format('woff2'),
+	url(../fonts/IRANSansXFaNum-eef74ebfdd2f831f23cfd30318692460.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IRANSansXFaNum';
+	src: url(../fonts/IRANSansXFaNum-d053bd3cac398cd22d58a4a9cbac442b.woff2) format('woff2'),
+	url(../fonts/IRANSansXFaNum-111e905597a23c2b62f9544336b2418d.woff) format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IRANSansXFaNum';
+	src: url(../fonts/IRANSansXFaNum-9515cbb1f780bb5e706b82781cfcacd6.woff2) format('woff2'),
+	url(../fonts/IRANSansXFaNum-910dbfcb7d70cc4c17758326e539858b.woff) format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'IRANSansXFaNum';
+	src: url(../fonts/IRANSansXFaNum-ffcea93a151ba4876efdcde00e7db973.woff2) format('woff2'),
+	url(../fonts/IRANSansXFaNum-b715ad7e9e0cb603af6f13ca0aff013a.woff) format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
